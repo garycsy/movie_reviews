@@ -20,4 +20,5 @@ from movie_reviews import views as movieViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', movieViews.home),
+    path('signup/', movieViews.signup, name='signup')
 ]
