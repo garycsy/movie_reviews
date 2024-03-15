@@ -5,6 +5,17 @@
 pillow - image processing
 
 
+## Commands
+
+Each time you create an app
+
+    python manage.py startapp
+
+Each time you make changes to a model file, you have to run
+
+    python manage.py makemigrations
+    python manage.py migrate
+
 ## Documentation
 
 Django documentation
