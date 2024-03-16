@@ -14,8 +14,18 @@
               <input type="text" class="form-control" name="searchMovie" >
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <label class="form-label">Searching for {{ searchTerm }}</label>
+            <!-- <label class="form-label">Searching for {{ searchTerm }}</label> -->
         </form>
+        <br>
+        <p>Searching for: {{ searchTerm }}</p>
+        {% for movie in movies %}
+            <h2>{{ movie.title }}</h2>
+            <h3>{{ movie.description }}</h2>
+            <img src="{{ movie.image.url }}">
+            {% if movie.url %}
+                <a href="{{ movie.url }}">Movie Link</a>
+            {% endif %}
+        {% endfor %}
         <br>
         <br>
         <h2>Join out mailing list</h2>
