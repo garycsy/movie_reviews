@@ -25,3 +25,5 @@ Django documentation
 [Model field reference](https://docs.djangoproject.com/en/5.0/ref/models/fields/)
 
 [Database Query Functions](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+
+[Model Forms](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/)
