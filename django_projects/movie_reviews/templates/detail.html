@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="card">
+    <div class="container mx-8 my-8">
+        <div class="grid grid-cols-2">
+            <div class="max-w-md">
                 <img src="{{ movie.image.url }}">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">{{ movie.title }}</h5>
-                    <p class="card-text">{{ movie.description }}</p>
+                <div class="">
+                    <h5 class="font-bold">{{ movie.title }}</h5>
+                    <p class="bg-gray-200">{{ movie.description }}</p>
                 {% if movie.url %}
                     <a href="{{ movie.url }}">Movie Link</a>
                 {% endif %}
                 </div>
             </div>
         </div>
+    </div>
 {% endblock content %}
