@@ -25,3 +25,22 @@ Django documentation
 [Model field reference](https://docs.djangoproject.com/en/5.0/ref/models/fields/)
 
 [Database Query Functions](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+
+
+## Tailwind + Flowbite
+
+Install NodeJS v20 (LTS) using NVM Package Manager
+
+```
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+nvm install 20
+```
+
+Install Tailwind CSS + Flowbite 
+
+```
+npm install -D tailwindcss
+npx tailwindcss init
+npm install flowbite
+# follow rest of the steps in https://flowbite.com/docs/getting-started/django/
+```

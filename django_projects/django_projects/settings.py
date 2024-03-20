@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'movie_reviews',
     'news',
+    'userportal',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,9 @@ ROOT_URLCONF = 'django_projects.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'movie_reviews/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'movie_reviews/templates'),
+                 os.path.join(BASE_DIR, 'userportal/templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
+    BASE_DIR / 'userportal/static/',
     BASE_DIR / 'movie_reviews/static/',
 ]
 
@@ -131,3 +136,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+# flowbite
+
+COMPRESS_ROOT = BASE_DIR / 'userportal/static/src'
+
+COMPRESS_ENABLED = True
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
