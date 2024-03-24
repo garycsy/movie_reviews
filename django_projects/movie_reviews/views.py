@@ -38,4 +38,22 @@ def createreview(request, movie_id):
             newReview.save()
             return redirect('detail', newReview.movie.id)
         except ValueError:
-            return render(request, 'createreview.html', {'form': ReviewForm(), 'error': 'Invalid data passwed in'})
+            return render(request, 'movie_reviews/createreview.html', {'form': ReviewForm(), 'error': 'Invalid data passed in'})
+        
+
+def updatereview(request, review_id):
+    review = get_object_or_404(Review, pk=review_id, user=request.user)
+
+    if request.method == "GET":
+        form = ReviewForm(instance=review)
+        return render(request, 'movie_reviews/updatereview.html', {'form': form, 'review': review})
+    
+    else:
+        try:
+            form = ReviewForm(request.POST, instance=review)
+            form.save()
+            return redirect('detail', review.movie.id)
+        except ValueError:
+            return render(request, 'movie_reviews/updatereview.html', {'form': ReviewForm(), 'error': 'Invalid data passed in'})
+        
+
