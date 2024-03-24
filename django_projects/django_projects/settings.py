@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'news',
     'userportal',
     'account',
-    'compressor',
+    # 'compressor',
 ]
 
 MIDDLEWARE = [
@@ -142,8 +142,8 @@ MEDIA_URL = '/media/'
 
 # flowbite
 
-COMPRESS_ROOT = BASE_DIR / 'static/src'
+# COMPRESS_ROOT = BASE_DIR / 'static/src'
 
-COMPRESS_ENABLED = True
+# COMPRESS_ENABLED = True
 
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+# STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
