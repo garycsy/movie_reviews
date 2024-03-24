@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'movie_reviews',
     'news',
     'userportal',
+    'account',
     'compressor',
 ]
 

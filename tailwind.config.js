@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'media',
   content: ['./django_projects/userportal/templates/**/*.html',
     './node_modules/flowbite/**/*.js',
   ],

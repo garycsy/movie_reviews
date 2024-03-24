@@ -28,5 +28,6 @@ urlpatterns = [
     path('userportal/', include('userportal.urls')),
     path('news/', include('news.urls')),
     path('movie/', include('movie_reviews.urls')),
+    path('account/', include('account.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

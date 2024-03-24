@@ -8,3 +8,5 @@ media/
 
 # database
 db.sqlite3
+
+**/CACHE/
