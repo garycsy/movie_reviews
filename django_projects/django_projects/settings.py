@@ -142,7 +142,7 @@ MEDIA_URL = '/media/'
 
 # flowbite
 
-COMPRESS_ROOT = BASE_DIR / 'userportal/static/src'
+COMPRESS_ROOT = BASE_DIR / 'static/src'
 
 COMPRESS_ENABLED = True
 
