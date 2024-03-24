@@ -125,8 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'userportal/static/',
-    BASE_DIR / 'movie_reviews/static/',
+    BASE_DIR / 'static/',
 ]
 
 # Default primary key field type
