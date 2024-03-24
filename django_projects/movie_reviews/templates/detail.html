@@ -4,14 +4,29 @@
         <div class="grid grid-cols-2">
             <div class="max-w-md">
                 <img src="{{ movie.image.url }}">
-                <div class="">
+                <div class="mt-4">
                     <h5 class="font-bold">{{ movie.title }}</h5>
                     <p class="bg-gray-200">{{ movie.description }}</p>
-                {% if movie.url %}
-                    <a href="{{ movie.url }}">Movie Link</a>
-                {% endif %}
+                <div class="mt-4">
+                    {% if movie.url %}
+                    <a class="py-2 px-4 border-solid rounded-md border-2 text-white bg-slate-700 shadow-lg" href="{{ movie.url }}">Movie Link</a>
+                    {% endif %}
+                    <a class="py-2 px-4 border-solid rounded-md border-2 text-white bg-slate-700 shadow-lg" href="{% url 'createreview' movie.id %}">Add Review</a>
+                </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container mx-8 my-8">
+        <h3 class="font-bold text-lg">Reviews</h3>
+        <ul class="flex flex-grow flex-col">
+            {% for review in reviews %}
+            <li class=" border-gray-400 mx-2 my-2 ">
+                <h6 class="w-full">{{ review.date }}</h6>
+                <h6>{{ review.text }}</h6>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock content %}
