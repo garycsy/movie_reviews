@@ -1,0 +1,42 @@
+{% extends 'movie_reviews/base.html' %}
+{% block content %}
+<div class="container flex justify-center">
+    <div class="container mx-8 my-8">
+        <div class="grid grid-cols-2">
+            <div class="max-w-md">
+                <img src="{{ movie.image.url }}">
+                <div class="py-4">
+                    <h5 class="font-bold">{{ movie.title }}</h5>
+                    <p class="">{{ movie.description }}</p>
+                </div>
+                <div class="py-4">
+                {% if movie.url %}
+                    <a href="{{ movie.url }}" class="btn px-4 ">Movie Link</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <a href="{% url 'createreview' movie.id %}" class="btn px-4">Add Review</a>
+                {% endif %}
+                </div>
+                <br>
+                <br>
+                <h3 class="font-bold">Reviews</h3>
+                <br>
+                <ul class="grid grid-cols-1 divide-y divide-solid  divide-gray-800 ">
+                    {% for review in reviews %}
+                        <li class="mt-4">
+                            <h5>Review by {{review.user.username}}</h5>
+                            <h6>{{review.date}}</h6>
+                            </pre>{{ review.text|linebreaksbr }}</pre>
+                            <br>
+                            {% if user.is_authenticated and user == review.user %}
+                                <a href="{% url 'updatereview' review.id %}" class="btn">Update</a>
+                                <a href="{% url 'deletereview' review.id %}" class="btn">Delete</a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

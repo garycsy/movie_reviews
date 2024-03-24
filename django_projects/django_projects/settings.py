@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'news',
     'userportal',
     'account',
-    'compressor',
+    # 'compressor',
 ]
 
 MIDDLEWARE = [
@@ -125,8 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'userportal/static/',
-    BASE_DIR / 'movie_reviews/static/',
+    BASE_DIR / 'static/',
 ]
 
 # Default primary key field type
@@ -142,8 +141,8 @@ MEDIA_URL = '/media/'
 
 # flowbite
 
-COMPRESS_ROOT = BASE_DIR / 'static/src'
+# COMPRESS_ROOT = BASE_DIR / 'static/src'
 
-COMPRESS_ENABLED = True
+# COMPRESS_ENABLED = True
 
-STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+# STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)

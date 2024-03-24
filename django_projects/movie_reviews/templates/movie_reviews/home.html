@@ -1,17 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'movie_reviews/base.html' %}
 {% block content %}
-<div class="container flex max-w-md mx-8 my-8">
-    <form>
-        <input type="text" class="px-4 py-2 flex-grow border-solid rounded-md border-4 shadow-lg" name="searchMovie" >
-        <button type="submit" class="px-4 py-2 border-solid rounded-md border-2 text-white bg-slate-700 shadow-lg">Search</button>
-        <p class="mt-4 font-bold text-lg">Searching for: {{ searchTerm }}</p>
-        <!-- <label class="form-label">Searching for {{ searchTerm }}</label> -->
+<div class="container mx-4 my-4">
+    <form class="flex items-center w-auto max-w-none">
+    <input type="text" class="input input-bordered w-full max-w-xs" name="searchMovie" >
+    <button type="submit" class="btn">Search</button>
+    <!-- <p class="font-bold text-lg">Searching for: {{ searchTerm }}</p> -->
+    <!-- <label class="form-label">Searching for {{ searchTerm }}</label> -->
     </form>
-
-    <br>
 </div>
+<br>
 
-<div class="container grid grid-cols-4 gap-x-4 mx-8 my-8">
+<div class="container grid grid-cols-4 gap-x-4 mx-4 my-8">
     {% for movie in movies %}
     <div class="max-w-sm rounded overflow-hidden shadow-lg ">
         <img class="w-full" src="{{ movie.image.url }}">
