@@ -4,7 +4,7 @@
 ## Django
 **/__pycache__/
 **/migrations/
-media/
+# media/
 
 # database
 # db.sqlite3
