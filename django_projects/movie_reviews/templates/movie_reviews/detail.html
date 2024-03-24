@@ -17,6 +17,26 @@
                 </a>
                 {% endif %}
                 </div>
+                <br>
+                <br>
+                <h3 class="font-bold">Reviews</h3>
+                <br>
+                <ul class="grid grid-cols-1 divide-y divide-solid  divide-gray-800 ">
+                    {% for review in reviews %}
+                        <li class="mt-4">
+                            <h5>
+                                Review by {{review.user.username}}
+                            </h5>
+                            <h6>
+                                {{review.date}}
+                            </h6>
+                            <p>
+                                {{review.text}}
+                            </p>
+                        </li>
+
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
