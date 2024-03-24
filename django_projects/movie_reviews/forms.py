@@ -9,7 +9,7 @@ class ReviewForm(ModelForm):
         self.fields['text'].widget.attrs.update(
             {'class': 'textarea mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'}
         )
-        self.fields['watchAgain'].widget.attrs.update({'class': ''})
+        self.fields['watchAgain'].widget.attrs.update({'class': 'toggle toggle-xs'})
 
     class Meta:
         model = Review
